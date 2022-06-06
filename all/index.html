@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="cityCheak(); return false">
+      <h4>please enter your city</h4>
+      <input type="text" id="inputNum1" />
+      <button type="submit">submit</button>
+    </form>
+    <h1 id="h1"></h1>
+    <script>
+      function cityCheak() {
+        let cityInput = document.querySelector("#inputNum1").value;
+        let lower = cityInput.toLowerCase();
+        console.log(lower)
+        let result = "wellcome to " + lower
+        document.getElementById('h1').innerHTML=result
+
+      }
+    </script>
+  </body>
+</html>

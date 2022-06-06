@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+      table {
+        width: 600px;
+        height: 300px;
+        text-align: center;
+        margin: 100px auto;
+      }
+      h1{
+          display: flex;
+          justify-content: center;
+      }
+      input {
+        width: 50px;
+      }
+      #button{
+        width: 100px;
+        height: 40px;
+      }
+
+      th{
+          background-color: rgb(121, 121, 224);
+      }
+      #invalid{
+          text-align: center;
+          color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>MarkSheet</h1>
+
+    <table border="1">
+      <tr>
+        <th>subject</th>
+        <th>marks</th>
+        <th>Total marks</th>
+        <th>grade</th>
+        <th>percentage</th>
+      </tr>
+
+      <tr>
+        <td>English</td>
+        <td><span>100 / </span><input type="number" id="input1" /></td>
+      </tr>
+      <tr>
+        <td>math</td>
+        <td><span>100 / </span><input type="number" id="input2" /></td>
+      </tr>
+      <tr>
+        <td>Biology</td>
+        <td><span>100 / </span><input type="number" id="input3" /></td>
+        <td id="totalMarks"></td>
+        <td id="grade"></td>
+        <td id="percentage"></td>
+      </tr>
+    </table>
+    <h3 id="h3"></h3>
+    <h3 id="invalid"></h3>
+   <center> <button id="button" onclick="submit()">submit</button></center>
+    <script>
+      function submit() {
+        let mark1 = document.querySelector("#input1").value;
+        console.log(mark1);
+        let mark2 = document.querySelector("#input2").value;
+        console.log(mark2);
+        let mark3 = document.querySelector("#input3").value;
+        console.log(mark3);
+        // mark1 = Number(mark1);
+        // mark1 = Number(mark2);
+        // mark1 = Number(mark3);
+        let invalid2 = "PLEASE ENTER VALID NUMBER"
+        if (mark1,mark2,mark3<1){
+            document.getElementById('invalid').innerHTML=invalid2
+        }if (mark1,mark2,mark3 <0){
+            document.getElementById('invalid').innerHTML=invalid2
+        }else{
+            document.getElementById('invalid').innerHTML=invalid2
+        }
+
+        let result = Number(mark1) + Number(mark2) + Number(mark3);
+        document.getElementById('totalMarks').innerHTML=result;
+        
+        let totalnumber =300
+
+        let percentage = (result / totalnumber)*100
+        console.log(percentage)
+       
+        document.getElementById('percentage').innerHTML=percentage;
+        if (percentage < 60) {
+                document.getElementById('grade').innerText="fail"
+
+            } else if (percentage > 59 && percentage < 70) {
+                document.getElementById('grade').innerText="B"
+
+            } else if (percentage > 69 && percentage < 80) {
+                document.getElementById('grade').innerText="A"
+            } else {
+                document.getElementById('grade').innerText="A-1"
+            }
+      }
+    </script>
+  </body>
+</html>
